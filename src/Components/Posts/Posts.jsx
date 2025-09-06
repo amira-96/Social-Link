@@ -16,6 +16,9 @@ import CardModle from "../CardDropdown/CardModle.jsx";
 
 
 export default function Posts({post,commentsLimt,getAllPosts,setPost,handlFileInputImage}) {
+  if (!post || !post.user) {
+return null; // لا تعرض أي شيء إذا كان المنشور أو المستخدم الخاص به غير موجود
+}
   const [visibleComments, setVisibleComments] = useState(2);
   const [CommentContent, setCommentContent] = useState("");
   const [isCommentsLoading, setIsCommentsLoading] = useState(false);
