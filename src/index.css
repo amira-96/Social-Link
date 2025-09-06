@@ -1,0 +1,28 @@
+@import "tailwindcss";
+@plugin './hero.js';
+
+@source '../node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}';
+@custom-variant dark (&:is(.dark *));
+
+@layer utilities{
+    body{
+/* background-image: radial-gradient(circle at center, #1eae98 0%, #09203f 50%, #1eae98 100%); */
+        background-attachment: fixed;  
+      }
+}
+
+
+
+@keyframes up-down-pulse {
+  0%, 100% {
+    transform: translateY(0); /* Start and end at the original position */
+  }
+  50% {
+    transform: translateY(-5px); /* Move 5 pixels up */
+  }
+}
+
+.animate-up-down-pulse {
+  animation: up-down-pulse 2s infinite alternate ease-in-out;
+}
+/* 
