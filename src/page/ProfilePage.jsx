@@ -14,27 +14,40 @@ export default function ProfilePage({onClose,getAllPosts}) {
  const [isUpdating, setIsUpdating] = useState(false);
 
  // الوصول إلى بيانات المستخدم من السياق
- const { userData } = useContext(authContext);
+ const { userData,setUserData } = useContext(authContext);
 
 
  // 2. دالة لرفع الصورة عند الضغط على زر منفصل
  async function uploadPhoto() {
   setIsUpdating(true);
   if (!imageFile) {
-   console.log("No file selected.");
-   return;
+  console.log("No file selected.");
+  setIsUpdating(false);
+  return;
   }
-
+ 
   const formData = new FormData();
   formData.append("photo", imageFile);
+ 
+  try {
+   const response = await uploadProfilePhotoApi(formData);
+   console.log("Upload response:", response);
 
-  // استدعاء دالة الـ API
-  const response = await uploadProfilePhotoApi(formData);
-  console.log("Upload response:", response);
-  onClose()
-  setIsUpdating(false);
-  setImagePreview(userphoto);
- }
+   if (response.message === "success") {
+    // تحديث بيانات المستخدم في السياق
+    setUserData(response.user);
+    // تحديث الصورة المعروضة في المكون
+    setImagePreview(response.user.profilePhoto);
+   }
+  } catch (error) {
+   console.error("Upload failed:", error);
+  } finally {
+   setIsUpdating(false);
+   onClose();
+  }
+}
+
+
 
  return (
   <div className="flex justify-center items-center min-h-screen py-10">
