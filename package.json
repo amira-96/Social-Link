@@ -1,6 +1,7 @@
 {
   "name": "app1",
   "private": true,
+  "homepage": "https://amira-96.github.io/Social-Link/",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
