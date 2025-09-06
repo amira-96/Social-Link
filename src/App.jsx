@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import reactLogo from './assets/react.svg'
+import { HashRouter as Router } from 'react-router-dom';
+
 import viteLogo from '/vite.svg'
 import './App.css'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -33,9 +35,7 @@ function App() {
 
   return (
     <>
-    <AppBlurProvider>
      <RouterProvider router={router}/>
-     </AppBlurProvider>
     </>
   )
 }

@@ -1,7 +1,6 @@
 {
   "name": "app1",
   "private": true,
-  "homepage": "https:/amira-96.github.io/Social-Link",
   "version": "0.0.0",
   "type": "module",
   "scripts": {
@@ -10,7 +9,7 @@
     "lint": "eslint .",
     "preview": "vite preview",
      "predeploy": "npm run build",                          
-    "deploy": "gh-pages -d build" 
+    "deploy": "gh-pages -d dist" 
   },
   "dependencies": {
     "@fortawesome/fontawesome-free": "^7.0.0",
