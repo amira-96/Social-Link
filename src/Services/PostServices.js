@@ -4,28 +4,12 @@ const baseUrl = "https://linked-posts.routemisr.com/"
 
 
 
-// use usequery
-export function getAllPostsApi() {
+// // use usequery
+// export function getAllPostsApi() {
 
 
     
-        return  axios.get(baseUrl +"posts", {
-            headers: {
-                token: localStorage.getItem("token")
-            },
-            params: {
-                sort:"-createdAt"
-            }
-        })
- 
-}
-
-
-// export async function getAllPostsApi() {
-
-
-//     try {
-//         const { data } = await axios.get(baseUrl + "posts", {
+//         return  axios.get(baseUrl +"posts", {
 //             headers: {
 //                 token: localStorage.getItem("token")
 //             },
@@ -33,14 +17,30 @@ export function getAllPostsApi() {
 //                 sort:"-createdAt"
 //             }
 //         })
-//         return data;
-
-//     } catch (error) {
-//         return error?.response?.data;
-
-//     }
-
+ 
 // }
+
+
+export async function getAllPostsApi() {
+
+
+    try {
+        const { data } = await axios.get(baseUrl + "posts", {
+            headers: {
+                token: localStorage.getItem("token")
+            },
+            params: {
+                sort:"-createdAt"
+            }
+        })
+        return data;
+
+    } catch (error) {
+        return error?.response?.data;
+
+    }
+
+}
 
 
  export async function addPostsApi(formData) {
