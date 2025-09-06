@@ -69,7 +69,7 @@ export default function MakePost({ getAllPosts }) {
                         onClick={() => setShowForm(true)}
                         className="flex-grow text-left text-sky-950 hover:text-sky-700 bg-gray-100 rounded-full px-4 py-3 transition duration-200 cursor-pointer"
                     >
-                        What's on your mind? Share a post...
+                        What's on your mind?
                     </button>
                 )}
             </div>

@@ -88,7 +88,7 @@ export default function Post({post,commentsLimt,getAllPosts,setPost,handlFileInp
 
 
   return (
-    <div  className="bg-white w-full rounded-md shadow-md h-auto py-3 px-3 my-10 ">
+    <div  className="bg-white w-full rounded-md shadow-md h-auto py-3 px-3 ">
       {IsInUpdateMode ? (
         // هذا هو كود وضع التحديث
         <div className="ps-12 pt-3">
