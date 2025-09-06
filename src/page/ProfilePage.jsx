@@ -1,7 +1,7 @@
 
 
 import React, { useContext, useEffect, useState } from "react";
-import userphoto from "/src/assets/userphoto.jpg"; 
+import userphoto from "../assets/userphoto.jpg"; 
 import {handleFileInputImage} from '../Helper/helper.js'
 import { uploadProfilePhotoApi } from "../Services/authServices.js";
 import { Button } from "@heroui/react";
